@@ -122,7 +122,7 @@ public class VoteUtils {
             String message = EntityUtils.toString(resEntity, "utf-8");
 
             result = Integer.parseInt((message.substring(message.indexOf("value\":{\"") + 8, message.indexOf("},\"type")).split(":")[1]));
-//            System.out.println(message);
+            System.out.println(message);
         } else {
             System.out.println("请求失败");
         }

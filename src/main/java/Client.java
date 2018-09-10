@@ -17,7 +17,7 @@ public class Client {
                 "深圳Wedo蛇口国际社区:60:30",
                 "北京优客工场Thinkplus智能办公空间:45:30",
                 "北京长阳共享际:64:30",
-                "共享际·鲜鱼口:91:30",
+                "共享际·鲜鱼口:91:100",
                 "优客工场:179:100",
                 "共享际:186:100",
                 "北京西打磨场:11:100"};
@@ -65,7 +65,7 @@ public class Client {
                         //随机到权重值范围内进行投票
                         if (r.nextInt(100) < Integer.parseInt(pArray[2])) {
                             code += VoteUtils.vote(pArray[1], httpHost);
-                            //投票后暂停 2 - 4 秒, 模拟真实用户.
+                            //投票后暂停 1 - 2 秒, 模拟真实用户.
                             Thread.sleep((int) ((Math.random() + 1) * 1000));
                         } else {
                             System.out.println("本次投票排除");
@@ -81,7 +81,7 @@ public class Client {
                 }
                 ipTableList.clear();
             }
-//            Thread.sleep(2000);
+            Thread.sleep(5000);
         }
 
     }

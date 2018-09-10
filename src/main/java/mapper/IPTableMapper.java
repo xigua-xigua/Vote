@@ -17,7 +17,6 @@ public interface IPTableMapper {
      * 修改代理地址
      *
      * @param ipTable
-     * @param id
      * @return status
      */
     int updateIPTable(IPTable ipTable);
