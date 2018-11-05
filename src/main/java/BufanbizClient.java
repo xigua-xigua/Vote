@@ -49,9 +49,17 @@ public class BufanbizClient {
 
                         //随机到权重值范围内进行投票
                         if (r.nextInt(100) < Integer.parseInt(pArray[2])) {
-                            code += VoteBufanbizUtils.vote(pArray[1], httpHost);
-                            //投票后暂停 1 - 2 秒, 模拟真实用户.
-                            Thread.sleep((int) ((Math.random() + 1) * 1000));
+                            int totalVoteCount = (int) (Math.random() * 20) + 10;
+                            for (int voteCount = 0; voteCount < totalVoteCount; voteCount++) {
+                                System.out.print(voteCount + "/" + totalVoteCount + ":");
+                                int retCode = VoteBufanbizUtils.vote(pArray[1], httpHost);
+                                code += retCode;
+                                //投票后暂停 1 - 2 秒, 模拟真实用户.
+                                Thread.sleep((int) ((Math.random() + 1) * 1000));
+                                if (retCode == 0) {
+                                    break;
+                                }
+                            }
                         } else {
                             System.out.println("本次投票排除");
                         }
