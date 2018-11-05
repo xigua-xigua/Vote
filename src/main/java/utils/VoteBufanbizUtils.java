@@ -78,7 +78,7 @@ public class VoteBufanbizUtils {
 //            formparams.add(new BasicNameValuePair("_", Long.toString(time)));
             HttpEntity reqEntity = new UrlEncodedFormEntity(formparams, "utf-8");
 
-            HttpHost target = new HttpHost("www.bufanbiz.com", 443, "https");
+            HttpHost target = new HttpHost("www.bufanbiz.com", 80, "http");
 //        HttpHost proxy = new HttpHost("119.5.1.15", 808, "http");
 
             RequestConfig requestConfig = RequestConfig.custom()
