@@ -24,7 +24,9 @@ public class IPUtils {
      */
 
     //    private static String apiUrl = "http://dev.kdlapi.com/api/getproxy/?orderid=973554528529784&num=100&area=%E5%9B%BD%E5%86%85&b_pcchrome=1&b_pcie=1&b_pcff=1&b_android=1&b_iphone=1&b_ipad=1&protocol=1&method=1&an_an=1&an_ha=1&quality=1&dedup=1&format=json&sep=1"; //api链接
-    private static String apiUrl = "http://dev.kdlapi.com/api/getproxy/?orderid=983619897899137&num=10&area=%E5%9B%BD%E5%86%85&b_pcchrome=1&b_pcie=1&b_pcff=1&b_android=1&b_iphone=1&b_ipad=1&protocol=1&method=1&an_an=1&an_ha=1&sort=2&dedup=1&format=json&sep=1";
+    //private static String apiUrl = "http://dev.kdlapi.com/api/getproxy/?orderid=983619897899137&num=10&area=%E5%9B%BD%E5%86%85&b_pcchrome=1&b_pcie=1&b_pcff=1&b_android=1&b_iphone=1&b_ipad=1&protocol=1&method=1&an_an=1&an_ha=1&sort=2&dedup=1&format=json&sep=1";
+    private static String apiUrl = "http://dev.kdlapi.com/api/getproxy/?orderid=954114629551026&num=10&area=%E5%9B%BD%E5%86%85&b_pcchrome=1&b_pcie=1&b_pcff=1&protocol=0&method=1&an_an=1&an_ha=1&sort=2&dedup=1&format=json&sep=1";
+
 
     public JSONArray getIPList() {
 
