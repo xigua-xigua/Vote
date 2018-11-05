@@ -85,6 +85,7 @@ public class VoteBufanbizUtils {
                     .setConnectTimeout(2000)//一、连接超时：connectionTimeout-->指的是连接一个url的连接等待时间
                     .setSocketTimeout(2000)// 二、读取数据超时：SocketTimeout-->指的是连接上一个url，获取response的返回等待时间
                     .setConnectionRequestTimeout(2000)
+                    .setProxy(proxyHost)
                     .build();
 
             HttpGet get = new HttpGet(String.format("/api/website/explore/vote5/startup/%s/vote/", id));
