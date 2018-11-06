@@ -52,7 +52,7 @@ public class BufanbizClient {
                             int totalVoteCount = (int) (Math.random() * 20) + 10;
                             for (int voteCount = 0; voteCount < totalVoteCount; voteCount++) {
                                 System.out.print(voteCount + "/" + totalVoteCount + ":");
-                                int retCode = VoteBufanbizUtils.vote(pArray[1], httpHost);
+                                int retCode = VoteBufanbizUtils.voteThread(pArray[1], httpHost);
                                 code += retCode;
                                 //投票后暂停 1 - 2 秒, 模拟真实用户.
                                 Thread.sleep((int) ((Math.random() + 1) * 1000));
