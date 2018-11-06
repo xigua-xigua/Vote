@@ -27,6 +27,9 @@ import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.TimeUnit;
 
 public class VoteBufanbizUtils {
 
@@ -139,6 +142,26 @@ public class VoteBufanbizUtils {
         return httpClient;
     }
 
+    public static int voteThread(final String id, final HttpHost proxyHost) {
+        Callable<Integer> caller = new Callable<Integer>() {
+            public Integer call() throws Exception {
+                //Thread.sleep(10000);
+                return vote(id, proxyHost);
+            }
+        };
+        FutureTask<Integer> ft = new FutureTask<Integer>(caller);
+        Thread td = new Thread(ft);
+        td.start();
+        int ret = 0;
+        try {
+            //ret = ft.get();
+            ret = ft.get(10, TimeUnit.SECONDS);
+            //ret = caller.call();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ret;
+    }
     /*
     不凡商业投票专用
     获取票数信息
